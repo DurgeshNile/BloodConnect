@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Save Lives, Donate Blood</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>BloodConnect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#search">Find Donors</a></li>
+                <li><a href="#awareness">Awareness</a></li>
+                <li><a href="donation-camps.html">Donation Camps</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Become a Hero. Donate Blood.</h1>
+            <p>Connect blood donors with those in need. Save lives, one donation at a time.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openDonorModal()">
+                    <i class="fas fa-user-plus"></i> Register as Donor
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('search')">
+                    <i class="fas fa-search"></i> Find Donors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <i class="fas fa-phone-alt"></i>
+            <span>Emergency Blood Helpline: <strong>1800-108-108</strong></span>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section">
+        <div class="container">
+            <h2>Find Blood Donors</h2>
+            <div class="search-form">
+                <select id="bloodGroupFilter">
+                    <option value="">All Blood Groups</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <input type="text" id="cityFilter" placeholder="Enter city">
+                <button onclick="filterDonors()" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            
+            <div class="donors-grid" id="donorsGrid">
+                <!-- Donor cards will be populated here -->
+            </div>
+            
+            <div id="noDonorsMessage" class="no-donors" style="display: none;">
+                <i class="fas fa-user-times"></i>
+                <p>No donors found. Be the first to register!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>What Donors Receive</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certificate of Appreciation</h3>
+                    <p>Digital/Printed certificate recognizing your contribution</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Priority Blood Access</h3>
+                    <p>Priority access to blood if you need it in emergency</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Refreshments</h3>
+                    <p>Complimentary milkshake, biscuits, and refreshments</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Free Health Checkup</h3>
+                    <p>Basic health screening and blood pressure check</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Donor Badge</h3>
+                    <p>Digital badge to showcase your heroic contribution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awareness Section -->
+    <section id="awareness" class="awareness-section">
+        <div class="container">
+            <h2>Blood Donation Awareness</h2>
+            
+            <div class="awareness-content">
+                <div class="eligibility-card">
+                    <h3><i class="fas fa-check-circle"></i> Eligibility Criteria</h3>
+                    <ul>
+                        <li>Age between 18 to 65 years</li>
+                        <li>Weight at least 50 kg</li>
+                        <li>No recent illness or medication</li>
+                        <li>No alcohol consumption 24 hours before donation</li>
+                        <li>Good overall health condition</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-card">
+                    <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <h4>When can I donate again?</h4>
+                        <p>You can donate whole blood every 3 months (90 days).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Is blood donation safe?</h4>
+                        <p>Yes, completely safe. Sterile, single-use equipment is used.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How long does donation take?</h4>
+                        <p>The actual donation takes 8-10 minutes, total process about 30 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Emergency Helpline</h3>
+                    <p>1800-108-108</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Support</h3>
+                    <p>support@bloodconnect.in</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>+91-9876543210</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>BloodConnect</span>
+                </div>
+                <p>&copy; 2025 BloodConnect. Saving lives together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donor Registration Modal -->
+    <div id="donorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register as Blood Donor</h2>
+                <span class="close" onclick="closeDonorModal()">&times;</span>
+            </div>
+            <form id="donorForm" class="donor-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" min="18" max="65" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bloodGroup">Blood Group *</label>
+                        <select id="bloodGroup" name="bloodGroup" required>
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number *</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastDonation">Last Donation Date (Optional)</label>
+                    <input type="date" id="lastDonation" name="lastDonation">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-heart"></i> Register as Donor
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Thank you for registering as a donor!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

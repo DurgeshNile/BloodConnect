@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Camps - BloodConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-heart"></i>
+                <span>BloodConnect</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#search">Find Donors</a></li>
+                <li><a href="index.html#awareness">Awareness</a></li>
+                <li><a href="donation-camps.html" class="active">Donation Camps</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-hospital"></i> Blood Donation Camps</h1>
+            <p>Join upcoming blood donation drives and save lives in your community</p>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <i class="fas fa-phone-alt"></i>
+            <span>Emergency Blood Helpline: <strong>1800-108-108</strong></span>
+        </div>
+    </div>
+
+    <!-- Camps Section -->
+    <section class="camps-section">
+        <div class="container">
+            <h2>Upcoming Blood Donation Camps</h2>
+            <div class="camps-grid" id="campsGrid">
+                <!-- Camps will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="camp-registration-section">
+        <div class="container">
+            <div class="registration-card">
+                <h2><i class="fas fa-clipboard-list"></i> Register for Blood Donation Camp</h2>
+                <form id="campRegistrationForm" class="camp-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campName">Full Name *</label>
+                            <input type="text" id="campName" name="campName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="campAge">Age *</label>
+                            <input type="number" id="campAge" name="campAge" min="18" max="65" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campBloodGroup">Blood Group *</label>
+                            <select id="campBloodGroup" name="campBloodGroup" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="campPhone">Phone Number *</label>
+                            <input type="tel" id="campPhone" name="campPhone" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="campEmail">Email Address *</label>
+                        <input type="email" id="campEmail" name="campEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selectedCamp">Select Camp *</label>
+                        <select id="selectedCamp" name="selectedCamp" required>
+                            <option value="">Choose a camp</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="allergies">Allergies/Medical Conditions (Optional)</label>
+                        <textarea id="allergies" name="allergies" rows="3" placeholder="Please mention any allergies or medical conditions"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termsAccept" name="termsAccept" required>
+                            <span class="checkmark"></span>
+                            I accept the terms and conditions and confirm that I meet the eligibility criteria for blood donation
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-calendar-check"></i> Register for Camp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="instructions-section">
+        <div class="container">
+            <h2>Pre-Donation Instructions</h2>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Before Donation</h3>
+                    <ul>
+                        <li>Have a good meal 3-4 hours before</li>
+                        <li>Drink plenty of water</li>
+                        <li>Avoid alcohol for 24 hours</li>
+                        <li>Get adequate sleep</li>
+                    </ul>
+                </div>
+                <div class="instruction-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>What to Bring</h3>
+                    <ul>
+                        <li>Valid government ID proof</li>
+                        <li>Registration confirmation</li>
+                        <li>Medical history (if any)</li>
+                        <li>Comfortable clothing</li>
+                    </ul>
+                </div>
+                <div class="instruction-card">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>After Donation</h3>
+                    <ul>
+                        <li>Rest for 10-15 minutes</li>
+                        <li>Drink fluids regularly</li>
+                        <li>Avoid heavy lifting for 24 hours</li>
+                        <li>Keep bandage on for 4-6 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>BloodConnect</span>
+                </div>
+                <p>&copy; 2025 BloodConnect. Saving lives together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Successfully registered for blood donation camp!</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize camps page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCamps();
+            populateCampDropdown();
+        });
+    </script>
+</body>
+</html>
