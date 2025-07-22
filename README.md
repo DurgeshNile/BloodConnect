@@ -55,7 +55,7 @@ Set up a Google Apps Script to receive form data.
 Link the script to your Google Sheet and update form action URLs accordingly.
 
 🌐 Live Demo
-[[Insert Live URL here if hosted](https://connectblood.netlify.app/)]
+[[Blood-Connect](https://connectblood.netlify.app/)]
 
 📬 Contact
 For feedback or queries:
